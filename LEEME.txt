@@ -1,0 +1,20 @@
+RUTA URBANA — Planeación de entregas terrestres en Ibagué
+
+INICIO RÁPIDO
+1. Descomprime la carpeta del proyecto.
+2. Abre una terminal dentro de la carpeta entregas_ibague.
+3. Instala las dependencias: pip install -r requirements.txt
+4. Ejecuta: python app.py
+5. Abre http://127.0.0.1:5050 en el navegador.
+
+CÓMO USARLO
+- Selecciona el tipo de vehículo y registra el peso y las dimensiones del envío.
+- Haz clic sobre una calle del mapa para indicar el destino.
+- Compara el recorrido más rápido con la alternativa más corta.
+- Añade los envíos pendientes y pulsa “Planificar carga y recorridos”.
+- El mapa mostrará las rutas de los viajes calculados.
+
+DATOS Y CONSIDERACIONES
+Las calles se consultan de OpenStreetMap la primera vez y se guardan localmente en ibague_grafo_v4.pkl. La descarga puede tardar unos minutos y necesita internet.
+La zona del mapa se limita al área de Ibagué definida en datos.py. El punto de salida y las capacidades de los vehículos son valores de demostración y pueden ajustarse allí.
+El cálculo de tiempo usa velocidades estimadas por tipo de vía; no incorpora tráfico en tiempo real. Los recorridos dependen de los datos disponibles de OpenStreetMap.

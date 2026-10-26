@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruta Urbana | Operación logística en Ibagué</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css">
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+  <aside>
+    <header class="marca"><div class="marca-icono">RU</div><div><p class="eyebrow">CENTRO DE OPERACIONES</p><h1>Ruta Urbana <small>Ibagué</small></h1><p class="subtitulo">Planeación de entregas terrestres</p></div></header>
+    <div class="seccion-titulo"><span class="numero">01</span><h2>Registrar envío</h2></div>
+    <div class="fila">
+      <label>Vehículo
+        <select id="vehiculo">
+          <option value="moto">Moto</option><option value="van" selected>Van</option><option value="furgon">Furgón</option>
+        </select>
+      </label>
+      <label>Peso del paquete (kg) <input id="peso" type="number" min="0.1" step="0.1" value="10"></label>
+    </div>
+    <div class="fila tres">
+      <label>Alto (cm) <input id="alto" type="number" min="1" value="30"></label>
+      <label>Ancho (cm) <input id="ancho" type="number" min="1" value="30"></label>
+      <label>Profundidad (cm) <input id="prof" type="number" min="1" value="30"></label>
+    </div>
+    <div class="fila">
+      <label>Tarifa (COP) <input id="valor" type="number" min="1" value="20000"></label>
+      <label>Nombre del paquete <input id="nombre" placeholder="Ej: Laptop Ana"></label>
+    </div>
+    <p id="aviso"></p>
+    <div class="ayuda-mapa"><span class="punto-verde"></span> Selecciona en el mapa la ubicación de entrega.</div>
+
+    <div class="seccion-titulo"><span class="numero">02</span><h2>Opciones de recorrido</h2></div>
+    <p id="fuente"></p>
+    <div id="rutas"><small>Aún no hay destino.</small></div>
+    <button id="guardar" type="button">+ Añadir envío a la lista</button>
+
+    <div class="seccion-titulo"><span class="numero">03</span><h2>Envíos pendientes</h2></div><div class="resumen-mini"><div><strong id="totalPedidos">0</strong><span>envíos</span></div><div><strong id="pesoPedidos">0 kg</strong><span>peso acumulado</span></div></div>
+    <ul id="lista"></ul>
+    <div class="fila">
+      <label>Peso máx. del vehículo (kg) <input id="pesoMax" type="number" min="1"></label>
+      <label>Volumen máx. (m³) <input id="volMax" type="number" min="0.01" step="0.01"></label>
+    </div>
+    <button id="despachar" class="boton-secundario" type="button">Planificar carga y recorridos</button>
+    <div id="resultado"></div>
+  </aside>
+  <main class="zona-mapa"><div class="mapa-etiqueta"><span class="punto-verde"></span> Ibagué, Tolima <small>· Mapa de vías</small></div><div id="mapa"></div><div class="leyenda"><span><i class="linea ruta-activa"></i>Recorrido seleccionado</span><span><i class="linea ruta-alterna"></i>Alternativa</span><span><i class="punto-leyenda"></i>Destino de envío</span></div></main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+  <script src="/static/js/mapa.js"></script>
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
